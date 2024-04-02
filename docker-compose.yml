@@ -8,6 +8,14 @@ services:
       environment:
         MONGO_INITDB_ROOT_USERNAME: admin
         MONGO_INITDB_ROOT_PASSWORD: password
+   
+   primes-database:
+      image: postgres:alpine
+      ports:
+         - "4003:5432"
+      environment:
+         POSTGRES_PASSWORD: password
+         POSTGRES_DB: primes
          
    arithmetic-service:
      image: arithmetic-service
